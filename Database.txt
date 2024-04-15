@@ -1,0 +1,39 @@
+:) Admin Table
+------------------------------------------
+CREATE TABLE ShopAdmin(username varchar(20), password varchar(20));
+INSERT INTO ShopAdmin VALUES('Admin','123');
+---------------------------------------------------------
+
+:) ItemsTable
+----------------------------------------------------------------
+CREATE TABLE ShopItems(Item_Id int PRIMARY KEY, Item_Brand varchar(20), Item_Category varchar(20), Item_Price long, Item_Stock int);
+
+CREATE SEQUENCE Item_Id MINVALUE 1 START WITH 1 INCREMENT BY 1 CACHE 50;
+
+INSERT INTO ShopItems VALUES (Item_Id.nextval, 'Konds', 'JCB', 1599, 20);
+------------------------------------------------------------------------
+
+:)Employee Table
+--------------------------------------------------------------
+CREATE TABLE ShopEmp(Emp_Id int PRIMARY KEY, Emp_Age int, Emp_Name varchar(20), Emp_Phone varchar(15), Emp_Mail varchar(20), Emp_Address varchar(20), Emp_Salary long);
+
+CREATE SEQUENCE Emp_Id MINVALUE 1 START WITH 1 INCREMENT BY 1 CACHE 1;
+
+INSERT INTO ShopEmp VALUES(Emp_Id.nextval, 20,'Gaurav', '9172951183','gaurav@gmail.com','Rahuri',59999);
+--------------------------------------------------------------------------------
+
+:) Customers Table
+---------------------------------------------------------
+CREATE TABLE ShopCust(Cust_Id int PRIMARY KEY, Cust_Name varchar(20), Cust_Phone varchar(15), Purchase_Items varchar(50), Quantity int, Cost long, Purchase_Date date);
+
+CREATE SEQUENCE Cust_Id MINVALUE 1 START WITH 1 INCREMENT BY 1 CACHE 2;
+
+INSERT INTO ShopCust VALUES(Cust_Id.nextval, 'Raj', 917293432, 'Car, JCB', 2, 3000, TO_DATE('2023-04-03', 'YYYY-MM-DD'));
+
+ALTER TABLE ShopCust ADD Payment_Method VARCHAR(20);
+---------------------------------------------------------------
+
+
+
+
+
